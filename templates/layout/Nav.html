@@ -1,0 +1,42 @@
+{% extends 'layout/base.html' %}
+
+{% block nav %}
+<nav class="flex">
+    {% if route == 'index' %}
+        <a href="/newUser" rel="noopener noreferrer">
+            Registrar
+        </a>
+    {% endif %}
+
+
+    {% if route == 'registerGame' or route == 'editGame' %}
+        <a href="{{ url_for('dashboard', username=session.get("username")) }}">VOLTAR</a>
+    {% endif %}
+
+
+    {% if route == 'dashboard' %}
+    <a href="/registerGame" rel="noopener noreferrer">
+        REGISTRAR JOGO
+    </a>
+    {% endif %}
+
+    {% if session.get('username') %}
+    <a href="{{ url_for('dashboard', username=session.get("username")) }}">
+        <h1>GAME DB</h1>
+    </a>
+    {% endif %}
+
+    {% if not session.get('username') %}
+    <a href="{{ url_for('index') }}">
+        <h1>GAME DB</h1>
+    </a>
+    {% endif %}
+
+    {% if route != 'login' or route != 'index' %}
+        <a href="{{ url_for('logout') }}">
+            Desconectar
+        </a>
+    {% endif %}
+</nav>
+
+{% endblock %}

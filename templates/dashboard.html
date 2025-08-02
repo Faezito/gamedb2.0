@@ -1,0 +1,85 @@
+{% include 'layout/Nav.html' %}
+
+{% block content %}
+<div id="body">
+    <h1>
+        Olá, {{ user }}! Acompanhe seus jogos abaixo.
+    </h1>
+
+
+        
+        <div id="games-list" class="flex center">
+
+            {% for game in games %}
+                <div class="game">
+                    <h3>{{ game[1] }}</h3>
+                    <div class="img-container">
+                        <img src="{{ game[6] }}" alt="Capa do jogo: {{ game[1] }}">
+                    </div>
+                    <ul>
+                        <li>Gênero: {{ game[3] }}</li>
+                        <li>Plataforma: {{ game[2] }}</li>
+                        <li>Nota: {{ game[4] }}</li>
+                        <li>Tempo de jogo: {{ game[7] }}</li>
+                        <li>Status: <span class="status" data-valor2="{{ game[8] }}"></span></li>
+                    </ul>
+                    <div id="game-buttons">
+                        <form action="{{ url_for('editGame', game_id=game[0]) }}">
+                            <button id="editar" href="/registerGame">EDITAR</button>
+                        </form>
+
+                        <form action="{{url_for('deleteGame', game_id=game[0])}}" method="POST">
+                            <button id="deletar" type="submit" onclick="return confirm('Tem certeza que deseja deletar o jogo?')">EXCLUIR</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+</div>
+
+        <script>
+        function ajustarStatus() {
+            const statusHtml = document.querySelectorAll('.status')
+            statusHtml.forEach(function(et) {
+            const valor2 = et.dataset.valor2
+            let status = ''
+            
+            switch (valor2) {
+                case 'zerado':
+                    status = 'Zerado'
+                    et.style.color = '#8cf502'
+                    break
+                case '100':
+                    status = '100% Concluído'
+                    et.style.color = '#02f53f'
+                    break
+                case 'platina':
+                    status = 'Platinado'
+                    et.style.color = '#cdf9fa'
+                    break
+                case 'nao':
+                    status = 'Jogando'
+                    et.style.color = '#e1fa05'
+                    break
+                case 'drop':
+                    status = 'red'
+                    break
+                default:
+                    status = ''
+                    break
+            }
+            et.innerText = status
+        })
+    }
+        
+
+        window.onload = function() {
+            ajustarStatus()
+        }
+    </script>
+
+{% endblock %}
+
+
+    {% include 'layout/Footer.html' %}

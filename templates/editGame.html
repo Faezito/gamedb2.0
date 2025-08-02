@@ -1,0 +1,53 @@
+{% include 'layout/Nav.html' %}
+
+{% block content %}
+
+<h1>Editar Jogo</h1>
+
+    <form action="{{ url_for('editGame', game_id=game[0]) }}" method="POST">
+        <input type="text" name="title" placeholder='TÍTULO DO JOGO' value="{{game[1]}}"> <br>
+
+        <div class="img-container">
+            <img src="{{game[6]}}" alt="CAPA DO JOGO">
+        </div>
+
+        <input type="text" placeholder="{{game[2]}}" disabled> <!-- PLATAFORMA -->
+
+        <input type="text" placeholder="{{game[3]}}" disabled> <!-- GENERO -->
+
+
+        <div id="range">
+            <label for="nota">Nota:</label> 
+            <input type="range" id="nota" name="nota" min="0" max="10" step="0.5" value="5" placeholder="Nota" oninput="atualizarValorRange()" required> 
+            <span id="valorNota">5</span>
+        </div>
+        <input type="text" name="horas" id="horas" placeholder="TEMPO DE JOGO" value="{{game[7]}}"> <br>
+
+        <select name="status" id="status" class="custom-select" required>
+            <option value="{{game[8]}}" disabled selected>STATUS DA GAMEPLAY</option>
+            <option value="zerado">Terminei a história</option>
+            <option value="100">Terminei história, DLCs e secundários</option>
+            <option value="platina">Platinei</option>
+            <option value="nao">Não, ainda estou jogando.</option>
+            <option value="drop">Larguei</option>
+        </select>
+
+        <button type="submit" id="salvar">SALVAR MUDANÇAS</button>
+    </form>
+
+        <script>
+        function atualizarValorRange() {
+            const rangeInput = document.getElementById('nota')
+            const spanValor = document.getElementById('valorNota')
+            spanValor.innerText = rangeInput.value
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            atualizarValorRange()
+        })
+
+        
+    </script>
+{% endblock %}
+
+    {% include 'layout/Footer.html' %}

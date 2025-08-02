@@ -1,0 +1,15 @@
+{% include 'layout/Nav.html' %}
+
+{% block content %}
+<div id="body-index">
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">ENTRAR</button>
+    </form>
+</div>
+    
+    <br>
+{% endblock %}
+
+{% include 'layout/Footer.html' %}

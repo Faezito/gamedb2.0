@@ -1,0 +1,30 @@
+{% include 'layout/Nav.html' %}
+
+{% block content %}
+<div id="body-form">
+
+<h1>Registrar Usuário</h1>
+
+    <form action="/newUser" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required> <br>
+        <input type="text" name="username" placeholder="Nome de Usuário" required> <br>
+        <input type="email" name="email" placeholder="E-mail" required> <br>
+        <input type="email2" name="email2" placeholder="Confirme seu e-mail" required> <br>
+        <input type="password" name="senha" id="senha" required placeholder="Digite sua senha."> <br>
+        <input type="password" name="senha2" id="senha2" required placeholder="Confirme sua senha.">
+
+        <button type="submit" id="salvar">CADASTRAR</button>
+    </form>
+
+    <script>
+        document.getElementById('salvar').addEventListener('submit', function(event) {
+            setTimeout(function() {
+                window.close()
+            }, 1000)
+        })
+    </script>
+        
+</div>
+{% endblock %}
+
+    {% include 'layout/Footer.html' %}

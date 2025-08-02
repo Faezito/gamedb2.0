@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: var(--fonte-primaria);
+}
+
+:root {
+    --fonte-primaria: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --primary-bg-color: rgb(64, 66, 68);
+    --secondary-bg-color: rgb(22, 29, 34);
+    --basic: rgb(218, 218, 218);
+    --red-danger: rgb(77, 1, 1);
+    --green-good: rgb(41, 206, 0);
+}
+
+#body-form {
+    width: 100%;
+    height: 70vh;
+}
+
+h1 {
+    justify-self: center;
+    margin: 40px 0;
+    color: var(--basic);
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+}
+
+nav {
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    background-color: var(--secondary-bg-color);
+    color: var(--basic);
+    font-family: var(--fonte-primaria);
+    justify-content: space-around;
+}
+
+    nav a {
+        color: var(--basic);
+        text-decoration: none;
+        text-transform: uppercase;
+        background: none;
+    }
+
+    nav h1 {
+        background: none;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 40px;
+    width: 400px;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+input, .custom-select {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    appearance: none; /* Remove estilo padrão (funciona melhor com -webkit-) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+    input:focus {
+        background-color: var(--basic);
+    }
+
+    input[type="range"] {
+        all: unset;
+        appearance: auto;
+        width: 100%;
+    }
+
+    label, span {
+        color: var(--basic);
+    }
+
+    #range {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        gap: 20px;
+    }
+
+form {
+    gap: 20px;
+}
+
+
+
+button {
+    margin-top: 20px;
+    padding: 15px 0;
+    background-color: var(--secondary-bg-color);
+    color: var(--basic);
+}
+
+.img-container {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+        align-self: center;
+    }
+
+.img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;    
+    }
+
+footer {
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    background-color: var(--secondary-bg-color);
+    color: var(--basic);
+    font-family: var(--fonte-primaria);
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+    footer a {
+        color: var(--basic);
+        text-decoration: none;
+        text-transform: uppercase;
+        background: none;
+    }
+
+    footer h1 {
+        background: none;
+    }
