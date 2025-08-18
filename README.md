@@ -5,6 +5,8 @@ Porém, para conseguir hospedagem gratuita, criei esta versão em Flask (Pyhton)
 
 A ideia é que os usuários possam fazer o tracking de seus jogos, em um sistema simples e direto, sem muita enrolação para adicionar ou editar os jogos.
 
+[Acesse o aplicativo.](https://gamedb2-0.onrender.com/)
+
 # Como usar
 
 Basta entrar na plataforma, criar seu usuário e adicionar seus jogos.
