@@ -50,6 +50,7 @@ button {
     height: 90%;
     flex-direction: row;
     justify-content: flex-start;
+    padding-left: 30px;
     gap: 30px;
     flex-wrap: wrap;
 }
