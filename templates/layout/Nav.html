@@ -10,7 +10,7 @@
 
 
     {% if route == 'registerGame' or route == 'editGame' %}
-        <a href="{{ url_for('dashboard', username=session.get("username")) }}">VOLTAR</a>
+        <a href="{{ url_for('dashboard', username=session.get('username')) }}">VOLTAR</a>
     {% endif %}
 
 
@@ -21,14 +21,14 @@
     {% endif %}
 
     {% if session.get('username') %}
-    <a href="{{ url_for('dashboard', username=session.get("username")) }}">
-        <h1>GAME DB</h1>
+    <a href="{{ url_for('dashboard', username=session.get('username')) }}">
+        <h1>🎮 GAME DB</h1>
     </a>
     {% endif %}
 
     {% if not session.get('username') %}
     <a href="{{ url_for('index') }}">
-        <h1>GAME DB</h1>
+        <h1>🎮 GAME DB</h1>
     </a>
     {% endif %}
 

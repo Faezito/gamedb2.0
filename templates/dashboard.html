@@ -4,13 +4,10 @@
 <div id="body">
     <h1>
         Olá, {{ user }}! Acompanhe seus jogos abaixo.
-    </h1>
-
-
-        
-        <div id="games-list" class="flex center">
-
-            {% for game in games %}
+    </h1>           
+            <div id="games-list" class="flex center">
+                
+                {% for game in games %}
                 <div class="game">
                     <h3>{{ game[1] }}</h3>
                     <div class="img-container">
@@ -27,17 +24,16 @@
                         <form action="{{ url_for('editGame', game_id=game[0]) }}">
                             <button id="editar" href="/registerGame">EDITAR</button>
                         </form>
-
+                        
                         <form action="{{url_for('deleteGame', game_id=game[0])}}" method="POST">
                             <button id="deletar" type="submit" onclick="return confirm('Tem certeza que deseja deletar o jogo?')">EXCLUIR</button>
                         </form>
                     </div>
                 </div>
-            {% endfor %}
-
+                {% endfor %}
+            </div>
         </div>
-</div>
-
+        
         <script>
         function ajustarStatus() {
             const statusHtml = document.querySelectorAll('.status')

@@ -1,13 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: var(--primary-bg-color);
-    font-family: var(--fonte-primaria);
-}
-
 :root {
     --fonte-primaria: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --primary-bg-color: rgb(64, 66, 68);
@@ -28,52 +18,15 @@ h1 {
     color: var(--basic);
 }
 
-.flex {
-    display: flex;
-}
-
-.center {
-    justify-content: center;
-}
-
-nav {
-    flex-direction: row;
-    align-items: center;
-    height: 80px;
-    background-color: var(--secondary-bg-color);
-    color: var(--basic);
-    font-family: var(--fonte-primaria);
-    justify-content: space-around;
-}
-
-    nav a {
-        color: var(--basic);
-        text-decoration: none;
-        text-transform: uppercase;
-        background: none;
-    }
-
-    nav h1 {
-        background: none;
-    }
-
 form {
-    display: flex;
-    flex-direction: column;
     gap: 5px;
     padding: 10px 40px;
-    width: 400px;
-    justify-self: center;
-    margin-top: 10px;
 }
 
 input, .custom-select {
     padding: 10px;
     border-radius: 5px;
-    background-color: aliceblue;
-    appearance: none; /* Remove estilo padrão (funciona melhor com -webkit-) */
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background-color: aliceblue
 }
 
     input:focus {
@@ -97,12 +50,6 @@ input, .custom-select {
         gap: 20px;
     }
 
-form {
-    gap: 20px;
-}
-
-
-
 button {
     margin-top: 20px;
     padding: 15px 0;
@@ -111,37 +58,24 @@ button {
 }
 
 .img-container {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 10px;
-        align-self: center;
-    }
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    align-self: center;
+}
 
 .img-container img {
+        gap: 20px;
         width: 100%;
         height: 100%;
         object-fit: cover;    
     }
 
-footer {
-    flex-direction: row;
-    align-items: center;
-    height: 80px;
-    background-color: var(--secondary-bg-color);
-    color: var(--basic);
-    font-family: var(--fonte-primaria);
-    justify-content: space-around;
-    margin-top: 50px;
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-self: center;
+    margin-top: 100px;
 }
-
-    footer a {
-        color: var(--basic);
-        text-decoration: none;
-        text-transform: uppercase;
-        background: none;
-    }
-
-    footer h1 {
-        background: none;
-    }
