@@ -29,17 +29,8 @@ def getUser(username):
 def getGames(user_id):
     con, cur = conectDB()
 
-    cur.execute('''SELECT * FROM games WHERE user_id = ? 
-                    ORDER BY 
-                        CASE status 
-                            WHEN 'nao' THEN 1
-                            WHEN 'zerado' THEN 2
-                            WHEN '100' THEN 3
-                            WHEN 'platina' THEN 4
-                            WHEN 'drop' THEN 5
-                            ELSE 6
-                        END                
-                ''', (user_id,))
+    cur.execute('SELECT * FROM games WHERE user_id = ?', (user_id,))
+    cur.execute('ORDER BY status')
     games = cur.fetchall()
 
     con.close()
