@@ -15,11 +15,20 @@ OBS: Não utilizo nenhuma API de dados de jogos, logo, tudo é manual. E para fa
 
 NÃO USE EMAIL/SENHA REAIS, utilize descartáveis. O sistema de banco de dados é sqlite, logo a segurança não é alta.
 
+# CHANGELOG 
+
+1.0.1 - Organização automática por status implementada. 
+Agora a ordem na qual os jogos aparecem é "Jogando" > "Zerado" > "100%" >  "Platinado" > "Abandonado", para facilitar a organização e controle de seus games.
+
+1.0.2 - Ajustes no registro e edição de jogos. 
+Agora é possível ter um preview de como ficará a capa do jogo no app, e editar todos os dados dele.
+
+
 # "ROADMAP"
 
 Coisas que ainda pretendo incluir:
 
- - Organização automática com base no status, ou seja, jogos que ainda estão sendo jogados ficam à frente na ordem de carregamento.
+ ✅ Organização automática com base no status, ou seja, jogos que ainda estão sendo jogados ficam à frente na ordem de carregamento.
  - Filtros, principalmente para o status.
  - Talvez uma API terceirizada com o banco de dados de todos os jogos, facilitando a inserção, porém todas que achei são pagas, e este é um projeto de estudos/portfólio, não profissional.
 

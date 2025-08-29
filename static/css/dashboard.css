@@ -87,6 +87,12 @@ button {
         align-self: center;
     }
 
+    .game h3 {
+        text-align: center;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
     .game:hover {
         background-color: rgba(22, 29, 34, 0.452);
         cursor: pointer;

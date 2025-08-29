@@ -241,7 +241,7 @@ def editGame(game_id):
     con, cur = conectDB()
 
     if request.method == 'POST':
-        cur.execute('SELECT title, nota, horas, status FROM games WHERE id = ?', (game_id,))
+        cur.execute('SELECT title, plataforma, genero, nota, capa, horas, status FROM games WHERE id = ?', (game_id,))
         game_antes = cur.fetchone()
 
         if not game_antes:
@@ -249,18 +249,24 @@ def editGame(game_id):
             return redirect(url_for('dashboard', username=session.get('username')))
 
         new_title = request.form.get('title') or game_antes[0]
-        new_nota = request.form.get('nota') or game_antes[1]
-        new_horas = request.form.get('horas') or game_antes[2]
-        new_status = request.form.get('status') or game_antes[3]
+        new_plataforma = request.form.get('plataforma') or game_antes[1]
+        new_genero = request.form.get('genero') or game_antes[2]
+        new_nota = request.form.get('nota') or game_antes[3]
+        new_capa = request.form.get('capa') or game_antes[4]
+        new_horas = request.form.get('horas') or game_antes[5]
+        new_status = request.form.get('status') or game_antes[6]
 
         cur.execute('''
         UPDATE games SET
                     title = ?,
+                    plataforma =?,
+                    genero = ?,
                     nota = ?,
+                    capa = ?,
                     horas = ?,
                     status = ?
         WHERE id = ?
-    ''', (new_title, new_nota, new_horas, new_status, game_id))
+    ''', (new_title, new_plataforma, new_genero, new_nota, new_capa, new_horas, new_status, game_id))
         
         con.commit()
         con.close()

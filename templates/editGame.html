@@ -11,28 +11,69 @@
             <img src="{{game[6]}}" alt="CAPA DO JOGO">
         </div>
 
-        <input type="text" placeholder="{{game[2]}}" disabled> <!-- PLATAFORMA -->
 
-        <input type="text" placeholder="{{game[3]}}" disabled> <!-- GENERO -->
+        <select name="genero" id="genero" class="custom-select">
+            <option value="" disabled selected hidden>Selecione o gênero</option>
+            <option value="Ação">Ação</option>
+            <option value="Aventura">Aventura</option>
+            <option value="RPG">RPG</option>
+            <option value="FPS">FPS (Tiro em primeira pessoa)</option>
+            <option value="TPS">TPS (Tiro em terceira pessoa)</option>
+            <option value="Mundo Aberto">Mundo Aberto</option>
+            <option value="Plataforma">Plataforma</option>
+            <option value="Corrida">Corrida</option>
+            <option value="Esportes">Esportes</option>
+            <option value="Luta">Luta</option>
+            <option value="Terror">Terror</option>
+            <option value="Stealth">Stealth</option>
+            <option value="Puzzle">Puzzle / Quebra-cabeça</option>
+            <option value="Simulação">Simulação</option>
+            <option value="Estratégia">Estratégia</option>
+            <option value="MMO">MMO / Online</option>
+            <option value="Hack and Slash">Hack and Slash</option>
+            <option value="Roguelike">Roguelike</option>
+            <option value="Metroidvania">Metroidvania</option>
+            <option value="Visual Novel">Visual Novel</option>
+            <option value="Survival">Survival</option>
+            <option value="Musical">Musical</option>
+            <option value="Battle Royale">Battle Royale</option>
+            <option value="Sandbox">Sandbox</option>
+            <option value="Idle / Incremental">Idle / Incremental</option>
+            <option value="Casual">Casual</option>
+            <option value="Educacional">Educacional</option>
+            <option value="Card Game">Card Game</option>
+            <option value="Tabuleiro">Tabuleiro</option>
+            <option value="Outro">Outro</option>
+        </select> <br>
 
+        <select name="plataforma" class="custom-select">
+            <option value="zero" disabled selected>SELECIONE A PLATAFORMA</option>
+            <option value="PC">PC/Handheld PC</option>
+            <option value="Playstation">Playstation</option>
+            <option value="XBox">XBOX</option>
+            <option value="Nintendo">Nintendo</option>
+            <option value="Mobile">Mobile</option>
+        </select> <br>
 
         <div id="range">
             <label for="nota">Nota:</label> 
-            <input type="range" id="nota" name="nota" min="0" max="10" step="0.5" value="5" placeholder="Nota" oninput="atualizarValorRange()" required> 
-            <span id="valorNota">5</span>
+            <input type="range" id="nota" name="nota" min="0" max="10" step="0.5" value="{{game[4]}}" placeholder="Nota" oninput="atualizarValorRange()"> 
+            <span id="valorNota">{{game[4]}}</span>
         </div>
-        <input type="text" name="horas" id="horas" placeholder="TEMPO DE JOGO" value="{{game[7]}}"> <br>
-
-        <select name="status" id="status" class="custom-select" required>
-            <option value="{{game[8]}}" disabled selected>STATUS DA GAMEPLAY</option>
+        <br>
+        <input type="text" name="capa" id="capa" placeholder="URL da Capa"> <br>
+        <input type="text" name="horas" id="horas" placeholder="Tempo de jogo"> <br>
+        
+        <select name="status" id="status" class="custom-select">
+            <option value="" disabled selected>VOCÊ ZEROU O JOGO?</option>
             <option value="zerado">Terminei a história</option>
             <option value="100">Terminei história, DLCs e secundários</option>
             <option value="platina">Platinei</option>
             <option value="nao">Não, ainda estou jogando.</option>
             <option value="drop">Larguei</option>
         </select>
-
-        <button type="submit" id="salvar">SALVAR MUDANÇAS</button>
+        
+        <button type="submit" id="salvar">SALVAR</button>
     </form>
 
         <script>
